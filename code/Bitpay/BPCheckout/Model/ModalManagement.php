@@ -1,30 +1,30 @@
 <?php
 
-
 namespace Bitpay\BPCheckout\Model;
 
-class ModalManagement implements \Bitpay\BPCheckout\Api\ModalManagementInterface
+use Bitpay\BPCheckout\Api\ModalManagementInterface;
+use Magento\Framework\App\ResourceConnection;
+
+class ModalManagement implements ModalManagementInterface
 {
-    private $_resourceConnection;
+    /** @var ResourceConnection  */
+    private $resourceConnection;
 
-    public function __construct(
-        \Magento\Framework\App\ResourceConnection $resourceConnection
-        )
+    public function __construct(ResourceConnection $resourceConnection)
     {
-        $this->_resourceConnection = $resourceConnection;
-
+        $this->resourceConnection = $resourceConnection;
     }
+
     /**
      * {@inheritdoc}
      */
     public function postModal()
     {
        #database
-        $resource = $this->_resourceConnection;
+        $resource = $this->resourceConnection;
         $connection    = $resource->getConnection();
         $table_name    = $resource->getTableName('bitpay_transactions');
         #json ipn
         $data = json_decode(file_get_contents("php://input"), true);
-       
     }
 }
