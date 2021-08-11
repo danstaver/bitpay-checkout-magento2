@@ -3,5 +3,4 @@
 	<preference for="Bitpay\BPCheckout\Api\IpnManagementInterface" type="Bitpay\BPCheckout\Model\IpnManagement"/>
 	<preference for="Bitpay\BPCheckout\Api\ModalManagementInterface" type="Bitpay\BPCheckout\Model\ModalManagement"/>
     <preference for="Magento\Quote\Model\QuoteRepository\Plugin\AccessChangeQuoteControl" type="Bitpay\BPCheckout\Model\AccessChangeQuoteControl"/>
-
 </config>
