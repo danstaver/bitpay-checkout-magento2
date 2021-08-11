@@ -5,11 +5,9 @@ namespace Bitpay\BPCheckout\Api;
 
 interface ModalManagementInterface
 {
-
     /**
      * POST for modal api
-     * @param string $param
-     * @return string
+     * @return void
      */
     public function postModal();
 }
