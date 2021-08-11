@@ -8,14 +8,14 @@ interface IpnManagementInterface
     /**
      * POST for ipn api
      *
-     * @return string
+     * @return bool
      */
-    public function postIpn();
+    public function postIpn(): bool;
 
      /**
      * POST for close api
       *
-     * @return string
+     * @return void
      */
     public function postClose();
 
