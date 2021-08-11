@@ -4,7 +4,6 @@ namespace Bitpay\BPCheckout\Api;
 
 interface IpnManagementInterface
 {
-
     /**
      * POST for ipn api
      *
@@ -18,5 +17,4 @@ interface IpnManagementInterface
      * @return void
      */
     public function postClose();
-
 }
