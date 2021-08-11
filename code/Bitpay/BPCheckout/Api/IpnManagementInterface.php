@@ -8,9 +8,9 @@ interface IpnManagementInterface
     /**
      * POST for ipn api
      *
-     * @return bool
+     * @return bool|void
      */
-    public function postIpn(): bool;
+    public function postIpn();
 
      /**
      * POST for close api
