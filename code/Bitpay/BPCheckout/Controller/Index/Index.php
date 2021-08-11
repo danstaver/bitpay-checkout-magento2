@@ -7,18 +7,18 @@ use Magento\Framework\View\Result\PageFactory;
 
 class Index extends Action
 {
-	protected $_pageFactory;
+	protected $pageFactory;
 
 	public function __construct(
 		Context $context,
 		PageFactory $pageFactory)
 	{
-		$this->_pageFactory = $pageFactory;
+		$this->pageFactory = $pageFactory;
 		return parent::__construct($context);
 	}
 
 	public function execute()
 	{
-		return $this->_pageFactory->create();
+		return $this->pageFactory->create();
 	}
 }
