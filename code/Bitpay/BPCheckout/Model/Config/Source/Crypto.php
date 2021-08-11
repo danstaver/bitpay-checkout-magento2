@@ -1,23 +1,22 @@
 <?php
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
+
 namespace Bitpay\BPCheckout\Model\Config\Source;
+
+use Magento\Framework\Data\OptionSourceInterface;
 
 /**
  *Crypto Model
  */
-class Crypto implements \Magento\Framework\Option\ArrayInterface
+class Crypto implements OptionSourceInterface
 {
-
-    public function toOptionArray()
+    /**
+     * @return array
+     */
+    public function toOptionArray(): array
     {
-
         return [
             ['value' => 'BTC', 'label' => __('BTC')],
             ['value' => 'BCH', 'label' => __('BCH')]
         ];
-
     }
 }
