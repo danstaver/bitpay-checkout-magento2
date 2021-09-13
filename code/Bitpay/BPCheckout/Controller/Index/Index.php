@@ -1,20 +1,32 @@
 <?php
 namespace Bitpay\BPCheckout\Controller\Index;
 
-class Index extends \Magento\Framework\App\Action\Action
+use Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\View\Result\PageFactory;
+
+class Index implements HttpGetActionInterface
 {
-	protected $_pageFactory;
+    /** @var
+     * PageFactory
+     */
+    protected $pageFactory;
 
-	public function __construct(
-		\Magento\Framework\App\Action\Context $context,
-		\Magento\Framework\View\Result\PageFactory $pageFactory)
-	{
-		$this->_pageFactory = $pageFactory;
-		return parent::__construct($context);
-	}
+    /**
+     * @param PageFactory $pageFactory
+     */
+    public function __construct(
+        PageFactory $pageFactory
+    ) {
+        $this->pageFactory = $pageFactory;
+    }
 
-	public function execute()
-	{
-		return $this->_pageFactory->create();
-	}
+    /**
+     * Default BitPay checkout page
+     *
+     * @return \Magento\Framework\View\Result\Page
+     */
+    public function execute()
+    {
+        return $this->pageFactory->create();
+    }
 }
